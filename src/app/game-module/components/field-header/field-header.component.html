@@ -1,0 +1,29 @@
+<header>
+    @let gameResult = gameResult$ | async;
+    <h2 class="result">
+        @if (gameResult) {
+            @for (player of gameResult.players; track player.name; let last = $last) {
+                <div class="player-info" [class.winner]="player.name === gameResult.winner?.name">
+                    <span>{{ player.name }}:</span>
+                    <span><strong>{{ player.score }}</strong></span>
+                </div>
+
+                @if (!last) {
+                    <span class="divider">|</span>
+                }
+            }
+        } @else {
+            <span>Press "Start" to run the game</span>
+        }
+    </h2>
+    <div class="delay">
+        <label for="delay-value">Delay (milliseconds):</label>
+        <input id="delay-value"
+               type="number"
+               [formControl]="delayValue"/>
+    </div>
+
+    <button class="game-trigger-btn" (click)="triggerGame()">
+        {{ gameResult ? 'Reset' : 'Start' }}
+    </button>
+</header>

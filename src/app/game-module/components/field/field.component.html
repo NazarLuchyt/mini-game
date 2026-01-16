@@ -1,0 +1,12 @@
+<div class="field-container">
+    <app-field-header/>
+    <div class="field" [style.--cols-count]="colsCount">
+        @for (cellItem of field$ | async; track cellItem.id) {
+            <div class="cell"
+                 [ngClass]="cellItem.status"
+                 (click)="handleClick(cellItem.id, cellItem.status)">
+            </div>
+        }
+    </div>
+
+</div>

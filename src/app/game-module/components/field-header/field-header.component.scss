@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .result {
+        display: flex;
+        gap: 1rem;
+
+        .player-info {
+            display: flex;
+            gap: 0.5rem;
+
+            &.winner {
+                color: green;
+            }
+        }
+    }
+
+    .game-trigger-btn {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 1rem;
+    }
+
+    .delay {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+}
+

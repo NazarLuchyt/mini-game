@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {ResultModalComponent} from './result-modal/result-modal.component';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    imports: [RouterOutlet, ResultModalComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'mini-game';
-}
+export class AppComponent {}

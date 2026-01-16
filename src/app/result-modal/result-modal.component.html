@@ -1,0 +1,11 @@
+<dialog #dialogRef class="game-modal" (click)="handleBackdropClick($event)">
+    @if (gameResult(); as result) {
+        <div class="content">
+            <h2>Game Result</h2>
+            <p>Winner: <strong>{{ result.winner!.name }}</strong></p>
+            @for (player of result.players; track player.name) {
+                <p><strong>{{ player.name }}:</strong> {{ player.score }}
+            }
+        </div>
+    }
+</dialog>

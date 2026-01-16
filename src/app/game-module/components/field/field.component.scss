@@ -1,0 +1,33 @@
+.field-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .field {
+        display: grid;
+        grid-template-columns: repeat(var(--cols-count, 1), minmax(0, 1fr));
+        gap: 5px;
+    }
+
+    .cell {
+        background-color: var(--color-field);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+        border-radius: 4px;
+
+        &.active {
+            background-color: var(--color-field-active);
+        }
+
+        &.lose {
+            background-color: var(--color-field-lose);
+        }
+
+        &.win {
+            background-color: var(--color-field-win);
+        }
+    }
+}
